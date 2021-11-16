@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flask app</title>
+    <style>
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form method="post" action="/result">
+      <label>
+        Loan amount:
+        <input name="loan_amnt" />
+      </label>
+      <label>
+        Annual income:
+        <input name="annual_inc" />
+      </label>
+      <label>
+        Verification status:
+        <input name="verification_status" />
+      </label>
+      <label>
+        Purpose:
+        <input name="purpose" />
+      </label>
+      <label>
+        Term:
+        <input name="term" />
+      </label>
+      <label>
+        Emp length:
+        <input name="emp_length" />
+      </label>
+      <label>
+        home_ownership
+        <input name="home_ownership" />
+      </label>
+      <label>
+        installment:
+        <input name="installment" />
+      </label>
+      <label>
+        dti:
+        <input name="dti" />
+      </label>
+      <label>
+        delinq_2yrs:
+        <input name="delinq_2yrs" />
+      </label>
+      <label>
+        fico_range_low:
+        <input name="fico_range_low" />
+      </label>
+      <label>
+        fico_range_high:
+        <input name="fico_range_high" />
+      </label>
+      <label>
+        inq_last_6mths:
+        <input name="inq_last_6mths" />
+      </label>
+      <label>
+        open_acc:
+        <input name="open_acc" />
+      </label>
+      <label>
+        pub_rec:
+        <input name="pub_rec" />
+      </label>
+      <label>
+        revol_bal:
+        <input name="revol_bal" />
+      </label>
+      <label>
+        revol_util:
+        <input name="revol_util" />
+      </label>
+      <label>
+        total_acc:
+        <input name="total_acc" />
+      </label>
+      <label>
+        total_rec_prncp:
+        <input name="total_rec_prncp" />
+      </label>
+      <label>
+        total_rec_int:
+        <input name="total_rec_int" />
+      </label>
+      <label>
+        total_rec_late_fee:
+        <input name="total_rec_late_fee" />
+      </label>
+      <label>
+        recoveries:
+        <input name="recoveries" />
+      </label>
+      <label>
+        collection_recovery_fee:
+        <input name="collection_recovery_fee" />
+      </label>
+      <label>
+        collections_12_mths_ex_med:
+        <input name="collections_12_mths_ex_med" />
+      </label>
+      <label>
+        application_type:
+        <input name="application_type" />
+      </label>
+      <label>
+        acc_now_delinq:
+        <input name="acc_now_delinq" />
+      </label>
+      <label>
+        tot_coll_amt:
+        <input name="tot_coll_amt" />
+      </label>
+      <label>
+        tot_cur_bal:
+        <input name="tot_cur_bal" />
+      </label>
+      <label>
+        total_rev_hi_lim:
+        <input name="total_rev_hi_lim" />
+      </label>
+      <label>
+        acc_open_past_24mths:
+        <input name="acc_open_past_24mths" />
+      </label>
+      <label>
+        avg_cur_bal:
+        <input name="avg_cur_bal" />
+      </label>
+      <label>
+        bc_open_to_buy:
+        <input name="bc_open_to_buy" />
+      </label>
+      <label>
+        bc_util:
+        <input name="bc_util" />
+      </label>
+      <label>
+        chargeoff_within_12_mths:
+        <input name="chargeoff_within_12_mths" />
+      </label>
+      <label>
+        delinq_amnt:
+        <input name="delinq_amnt" />
+      </label>
+      <label>
+        mo_sin_old_il_acct:
+        <input name="mo_sin_old_il_acct" />
+      </label>
+      <label>
+        mo_sin_old_rev_tl_op:
+        <input name="mo_sin_old_rev_tl_op" />
+      </label>
+      <label>
+        mo_sin_rcnt_rev_tl_op:
+        <input name="mo_sin_rcnt_rev_tl_op" />
+      </label>
+      <label>
+        mo_sin_rcnt_tl:
+        <input name="mo_sin_rcnt_tl" />
+      </label>
+      <label>
+        mort_acc:
+        <input name="mort_acc" />
+      </label>
+      <label>
+        mths_since_recent_bc:
+        <input name="mths_since_recent_bc" />
+      </label>
+      <label>
+        mths_since_recent_inq:
+        <input name="mths_since_recent_inq" />
+      </label>
+      <label>
+        num_accts_ever_120_pd:
+        <input name="num_accts_ever_120_pd" />
+      </label>
+      <label>
+        num_actv_bc_tl:
+        <input name="num_actv_bc_tl" />
+      </label>
+      <label>
+        num_actv_rev_tl:
+        <input name="num_actv_rev_tl" />
+      </label>
+      <label>
+        num_bc_sats:
+        <input name="num_bc_sats" />
+      </label>
+      <label>
+        num_bc_tl:
+        <input name="num_bc_tl" />
+      </label>
+      <label>
+        num_il_tl:
+        <input name="num_il_tl" />
+      </label>
+      <label>
+        num_op_rev_tl:
+        <input name="num_op_rev_tl" />
+      </label>
+      <label>
+        num_rev_accts:
+        <input name="num_rev_accts" />
+      </label>
+      <label>
+        num_rev_tl_bal_gt_0:
+        <input name="num_rev_tl_bal_gt_0" />
+      </label>
+      <label>
+        num_sats:
+        <input name="num_sats" />
+      </label>
+      <label>
+        num_tl_120dpd_2m:
+        <input name="num_tl_120dpd_2m" />
+      </label>
+      <label>
+        num_tl_30dpd:
+        <input name="num_tl_30dpd" />
+      </label>
+      <label>
+        num_tl_90g_dpd_24m:
+        <input name="num_tl_90g_dpd_24m" />
+      </label>
+      <label>
+        num_tl_op_past_12m:
+        <input name="num_tl_op_past_12m" />
+      </label>
+      <label>
+        pct_tl_nvr_dlq:
+        <input name="pct_tl_nvr_dlq" />
+      </label>
+      <label>
+        percent_bc_gt_75:
+        <input name="percent_bc_gt_75" />
+      </label>
+      <label>
+        pub_rec_bankruptcies:
+        <input name="pub_rec_bankruptcies" />
+      </label>
+      <label>
+        tax_liens:
+        <input name="tax_liens" />
+      </label>
+      <label>
+        tot_hi_cred_lim:
+        <input name="tot_hi_cred_lim" />
+      </label>
+      <label>
+        total_bal_ex_mort:
+        <input name="total_bal_ex_mort" />
+      </label>
+      <label>
+        total_bc_limit:
+        <input name="total_bc_limit" />
+      </label>
+      <label>
+        total_il_high_credit_limit:
+        <input name="total_il_high_credit_limit" />
+      </label>
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
